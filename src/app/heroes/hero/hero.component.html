@@ -1,0 +1,24 @@
+<h1>{{getheroName()}}</h1>
+
+<dl>
+  <td>Name:</td>
+  <dd> {{name}} </dd>
+
+  <td>Age:</td>
+  <dd> {{age}} </dd>
+
+  <td>Power:</td>
+  <dd> {{capitalizeNamed(power)}} </dd>
+  <dd> {{capitalizedName}} </dd>
+
+  <td>Human:</td>
+  @if (human) {
+    <dd> Yes </dd>
+  }@else {
+    <dd> No </dd>
+  }
+</dl>
+
+<button class="btn btn-primary m-2" (click)="changeName('Manolo')">Change Name</button>
+<button class="btn btn-primary m-2" (click)="changeAge(55)">Change Age</button>
+

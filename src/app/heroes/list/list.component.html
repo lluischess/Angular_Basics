@@ -1,0 +1,22 @@
+<h1>{{title}}</h1>
+
+<ul class="mt-2 list-group">
+  @for (hero of heroNames; track $index) {
+    <li class="list-group-item">{{$index + 1}}: {{hero}}</li>
+    <button class="btn btn-outline-danger m-2" (click)="deteteHero($index)">Delete Hero</button>
+  }
+</ul>
+
+
+@if (deletedHero && deletedHero.length > 0){
+  @if (heroNames.length > 0){
+  <h3>El ultimo Heroe Eliminado: {{deletedHero.length - 1}}</h3>
+  }@else {
+    <ng-container *ngTemplateOutlet="nadaQueBorrar"></ng-container>
+  }
+  }
+
+<ng-template #nadaQueBorrar>
+  <h3>No existen Heroes para eliminar</h3>
+</ng-template>
+
