@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Character } from '../../interfaces/character.interface';
 
 @Component({
   selector: 'app-dbz-lista',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './lista.component.css'
 })
 export class ListaDbzComponent {
-
+  @Input()
+  public characterList: Character[] = [
+    {
+      name: 'Trunks',
+      power: 1000
+    }
+  ]
 }
