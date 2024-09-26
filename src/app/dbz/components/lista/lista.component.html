@@ -1,7 +1,12 @@
 <h4>Personajes</h4>
     <ul class="list-group">
+
       @for (character of characterList; let isFirst = $first; let isLast = $last; let count = $count; track $index) {
-        <li class="list-group-item"
-        [class]="{'list-group-item-primary': isFirst, 'list-group-item-danger': isLast}"> {{count + 1}} {{character.name}} - {{character.power}} {{isFirst ? '(Primero)' : ''}} {{isLast ? '(Ultimo)' : ''}}</li>
+        <li class="list-group-item d-flex justify-content-between align-items-center"
+        [class]="{'list-group-item-primary': isFirst, 'list-group-item-danger': isLast}"> {{count + 1}} {{character.name}} - {{character.power}} {{isFirst ? '(Primero)' : ''}} {{isLast ? '(Ultimo)' : ''}}
+
+        <button class="btn btn-danger m-2" (click)="deleteCharacter($index)">Delete</button>
+
+      </li>
       }
     </ul>

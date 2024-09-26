@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col">
-    <app-dbz-lista [characterList]="characters"/>
+    <app-dbz-lista [characterList]="characters" (onDelete)="onDeleteCharacter($event)"/>
   </div>
 
   <div class="col">
