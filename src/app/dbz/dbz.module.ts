@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './pages/main-page.component';
 import { ListaDbzComponent } from './components/lista/lista.component';
 import { FormDbzComponent } from './components/form/form.component';
@@ -13,7 +14,8 @@ import { FormDbzComponent } from './components/form/form.component';
 
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     MainPageComponent
