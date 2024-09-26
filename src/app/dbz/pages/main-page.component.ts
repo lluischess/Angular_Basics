@@ -18,4 +18,11 @@ export class MainPageComponent {
         power: 9000
       }
     ];
+
+    public addCharacter(Newcharacter: Character): void {
+      //this.characters.push(character);
+      console.log(Newcharacter);
+      this.characters.push(Newcharacter);
+      console.log(this.characters);
+    }
 }
