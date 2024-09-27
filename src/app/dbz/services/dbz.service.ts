@@ -6,24 +6,30 @@ import { v4 as uuid } from 'uuid';
 export class DbzService {
   public characters : Character[] = [
     {
+      id: uuid(),
       name: 'Krillin',
       power: 100
     },
     {
+      id: uuid(),
       name: 'Goku',
       power: 9000
     }
   ];
 
   public addCharacter(Newcharacter: Character): void {
-    //this.characters.push(character);
-    console.log(Newcharacter);
-    this.characters.push(Newcharacter);
+    // Esto pilla las propiedades del objeto
+    const newcharacter : Character = {id: uuid(),...Newcharacter};
+    this.characters.push(newcharacter);
     console.log(this.characters);
   }
 
-  public onDeleteCharacter( index: number ): void {
-    console.log({ index });
-    this.characters.splice(index, 1);
+  // public onDeleteCharacter( index: number ): void {
+  //   console.log({ index });
+  //   this.characters.splice(index, 1);
+  // }
+
+  public onDeleteCharacterbyId(id: string): void {
+    this.characters = this.characters.filter(character => character.id !== id);
   }
 }

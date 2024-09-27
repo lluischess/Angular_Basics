@@ -16,11 +16,11 @@ export class ListaDbzComponent {
   ]
 
   @Output()
-  public onDelete: EventEmitter<number> = new EventEmitter();
+  public onDelete: EventEmitter<string> = new EventEmitter();
 
 
-  public deleteCharacter( index: number ): void {
-    this.onDelete.emit( index );
+  public deleteCharacter( id: string ): void {
+    this.onDelete.emit( id );
   }
 
 }
