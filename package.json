@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:href": "rmdir /s /q docs && ng build --base-href=./ && xcopy /s /e /y dist\\bases\\browser docs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
